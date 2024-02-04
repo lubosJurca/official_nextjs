@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect} from 'react';
 import CardComponent from '../our-help-card/page';
 
 import { stagger, useAnimate, useInView } from 'framer-motion';
@@ -43,7 +43,7 @@ const OurHelp = () => {
 
   const [scope,animate] = useAnimate()
   const isInView = useInView(scope, { once: true });
-
+  
 
   useEffect(() => {
     animate(
@@ -56,7 +56,7 @@ const OurHelp = () => {
         delay: isInView ? staggerCards : 0,
       }
     );
-  },[isInView])
+  },[isInView,animate])
 
 
   return (
