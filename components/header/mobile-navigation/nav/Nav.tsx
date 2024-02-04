@@ -62,7 +62,7 @@ const Nav = ({ handleClick }: NavProps) => {
   const [isTriggered, setIsTriggered] = useState(false);
 
   const handleTrigger = () => {
-    setIsTriggered(!isTriggered);
+    setIsTriggered(prevstate => !prevstate);
   };
 
   return (
