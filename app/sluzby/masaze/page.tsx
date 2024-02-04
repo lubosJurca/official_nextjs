@@ -104,9 +104,9 @@ const Masaze = () => {
               <CardDescription className='py-4'>{masaz.desc}</CardDescription>
               <h4 className='italic'>Pro koho je tato masáž vhodná?</h4>
               <ul >
-                {masaz.vhodnePro.map((item) => {
+                {masaz.vhodnePro.map((item,index) => {
                   return (
-                    <li className='font-light list-disc ml-6'>{item.title}</li>
+                    <li key={index} className='font-light list-disc ml-6'>{item.title}</li>
                   );
                 })}
               </ul>

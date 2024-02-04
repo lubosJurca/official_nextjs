@@ -12,14 +12,14 @@ const montserrat = Kalam({ subsets: ['latin'], weight: '300' });
 
 const MainNavHeader = () => {
   return (
-    <div className='flex w-full justify-between items-center px-4 border-b'>
+    <div className='flex w-full justify-between items-center px-4 border-b text-slate-600'>
         <h5 className='flex gap-2'><MapPin />Rajnochovice 181</h5>
       <motion.h1
         variants={variants}
         initial='hidden'
         animate='enter'
         transition={{ type: 'linear' }}
-        className={`${montserrat.className} text-center text-4xl py-6  text-slate-600`}
+        className={`${montserrat.className} text-center text-4xl py-6  `}
         viewport={{ once: true }}
       >
         Vital Centrum Rajnochovice
