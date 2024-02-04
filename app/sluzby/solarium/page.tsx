@@ -35,8 +35,8 @@ const Solarium = () => {
   ];
 
   return (
-    <section className=' h-screen max-w-7xl mx-auto flex flex-col gap-8 justify-center px-4 '>
-      <h2 className='font-bold text-5xl mb-4  text-center'>Solárium</h2>
+    <section className=' min-h-screen max-w-7xl mx-auto flex flex-col pt-20 sm:pt-0 gap-8 py-10  px-4 '>
+      <h2 className='font-bold text-5xl mb-4  text-center sm:mt-[12rem]'>Solárium</h2>
 
       <p className='text-slate-600'>
         Naše solárium vám přináší zážitek ze slunění bez nutnosti opouštět

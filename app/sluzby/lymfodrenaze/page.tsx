@@ -36,8 +36,8 @@ const Lymfodrenaze = () => {
   ];
 
   return (
-    <section className=' h-screen max-w-7xl mx-auto flex flex-col gap-8 justify-center px-4 '>
-      <h2 className='font-bold text-5xl mb-4 mt-10 text-center'>Lymfodrenáže</h2>
+    <section className=' min-h-screen max-w-7xl mx-auto flex flex-col pt-20 sm:pt-0 gap-8 py-10 px-4 '>
+      <h2 className='font-bold text-5xl mb-4 sm:mt-[10rem] text-center'>Lymfodrenáže</h2>
 
       <p className='text-slate-600'>
         Lymfodrenážní masáž je jemný a účinný způsob, jak podpořit přirozený tok

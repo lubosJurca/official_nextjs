@@ -35,8 +35,8 @@ const VacuShape = () => {
   ];
 
   return (
-    <section className=' h-screen max-w-7xl mx-auto flex flex-col gap-8 justify-center px-4 '>
-      <h2 className='font-bold text-5xl mb-4  text-center'>Solárium</h2>
+    <section className='min-h-screen max-w-7xl mx-auto flex pt-20 sm:pt-0 flex-col gap-8  px-4 '>
+      <h2 className='font-bold text-5xl mb-4 sm:mt-[12rem] text-center'>VacuShape</h2>
 
       <p className='text-slate-600'>
         Naše solárium vám přináší zážitek ze slunění bez nutnosti opouštět

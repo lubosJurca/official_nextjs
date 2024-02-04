@@ -92,8 +92,8 @@ const Masaze = () => {
   ];
 
   return (
-    <section className=' h-screen max-w-7xl mx-auto flex flex-col gap-8 justify-center'>
-      <h2 className='font-bold text-5xl mb-4 text-center mt-[30rem]'>Masáže</h2>
+    <section className='min-h-screen max-w-7xl mx-auto pt-20 sm:pt-0 flex flex-col gap-8 '>
+      <h2 className='font-bold text-5xl mb-4 text-center sm:mt-[12rem] '>Masáže</h2>
       {typyMasazi.map((masaz) => {
         return (
           <Card key={masaz.id} className='flex flex-col text-slate-600 shadow-none border-none'>

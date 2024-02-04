@@ -21,22 +21,23 @@ import preview17 from '@/public/images/preview/preview17.jpg';
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
     y: 100,
   },
-  animate: (index: number ) => {
+  animate: (index: number) => {
     return {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.07 * index
-      }
-    }
+        delay: 0.07 * index,
+      },
+    };
   },
- 
 };
 
 const Galerie = () => {
@@ -112,27 +113,34 @@ const Galerie = () => {
   ];
 
   return (
-    <div className='flex flex-wrap gap-4 pt-40 px-4'>
-      {imageGallery.map((image) => (
-        <motion.div
-          variants={fadeInAnimationVariants}
-          initial='initial'
-          animate='animate'
-          viewport={{
-            once: true,
-          }}
-          custom={image.id}
-          key={image.id}
-          className='h-44 '
-        >
-          <Image
-            src={image.src}
-            alt='image name'
-            width={300}
-            className='h-full'
-          />
-        </motion.div>
-      ))}
+    <div className='flex flex-col flex-wrap  gap-4 min-h-screen px-4  '>
+      <h2 className='font-bold text-5xl mb-4 sm:mt-[12rem]  text-center'>
+        Galerie
+      </h2>
+      <Suspense fallback={<Loading />}>
+        <ul className='flex flex-wrap justify-center gap-4'>
+          {imageGallery.map((image) => (
+            <motion.li
+              variants={fadeInAnimationVariants}
+              initial='initial'
+              animate='animate'
+              viewport={{
+                once: true,
+              }}
+              custom={image.id}
+              key={image.id}
+              className='h-44'
+            >
+              <Image
+                src={image.src}
+                alt='image name'
+                width={300}
+                className='h-full'
+              />
+            </motion.li>
+          ))}
+        </ul>
+      </Suspense>
     </div>
   );
 };

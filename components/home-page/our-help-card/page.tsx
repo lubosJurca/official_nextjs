@@ -1,4 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../../ui/card';
 
 type CardComponentProps = {
   title: string;
@@ -12,7 +18,9 @@ const CardComponent = (item: CardComponentProps) => {
       <CardHeader>
         <CardTitle>{item.title}</CardTitle>
       </CardHeader>
-      <CardContent>{item.desc}</CardContent>
+      <CardContent>
+        <CardDescription>{item.desc}</CardDescription>
+      </CardContent>
     </Card>
   );
 };

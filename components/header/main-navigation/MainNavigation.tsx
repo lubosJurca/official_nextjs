@@ -1,13 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 import * as React from 'react';
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
-
-import { Montserrat } from 'next/font/google';
 
 import {
   NavigationMenu,
@@ -18,8 +14,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import MainNavHeader from './main-navigation-header/MainNavHeader';
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -48,24 +45,12 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-const variants = {
-  hidden: { y: -200 },
-  enter: { y: 0 },
-};
 
 export default function MainNavigation() {
   return (
-    <div className='fixed z-10 bg-white hidden sm:block'>
-      <motion.h1
-        variants={variants}
-        initial='hidden'
-        animate='enter'
-        transition={{ type: 'linear' }}
-        className={`${montserrat.className} text-center text-4xl py-6 border-b text-slate-600`}
-        viewport={{ once: true }}
-      >
-        Vital Centrum Rajnochovice
-      </motion.h1>
+    <header className='z-10 fixed bg-white hidden sm:block'>
+  
+     <MainNavHeader />
       <NavigationMenu className='border-b'>
         <NavigationMenuList className='w-screen justify-evenly text-4xl'>
           <NavigationMenuItem>
@@ -122,7 +107,7 @@ export default function MainNavigation() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-    </div>
+    </header>
   );
 }
 

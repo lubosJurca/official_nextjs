@@ -60,7 +60,8 @@ const OurHelp = () => {
 
 
   return (
-    <div ref={scope} className='h-full flex flex-col justify-center'>
+    <div ref={scope} className='h-fit flex flex-col justify-center'>
+     
       <h2 className='text-3xl text-center mb-24 font-semibold font-sans text-slate-600'>
         Centrum Zdraví je vaším spolehlivým průvodcem na cestě k optimálnímu
         zdraví a pohodě. Naši odborníci vám mohou pomoci:
