@@ -15,96 +15,48 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import MainNavHeader from './main-navigation-header/MainNavHeader';
-
-
-
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: 'Masáže',
-    href: '/sluzby/masaze',
-    description:
-      'Masáž je terapeutický způsob manipulace měkkých tkání těla, zaměřený na uvolnění napětí, zlepšení průtoku krve a dosažení celkové relaxace a pohody.',
-  },
-  {
-    title: 'Lymfodrenáže',
-    href: '/sluzby/lymfodrenaze',
-    description:
-      'Lymfodrenáž je terapeutická technika stimulující odtok lymfy, podporující detoxikaci a snižující otoky.',
-  },
-  {
-    title: 'Solárium',
-    href: '/sluzby/solarium',
-    description:
-      'Solarium je zařízení umožňující opalování pomocí umělého ultrafialového záření, často využívané k dosažení opálení nebo stimulaci tvorby vitamínu D.',
-  },
-  {
-    title: 'VacuShape',
-    href: '/sluzby/vacushape',
-    description:
-      'VacuShape je zařízení pro tvarování těla, které využívá kombinaci cvičení a podtlaku k posilování svalů a redukci tukových vrstev..',
-  },
-];
-
+import { navData } from '@/lib/data';
 
 export default function MainNavigation() {
   return (
     <header className='z-10 fixed bg-white hidden sm:block'>
-  
-     <MainNavHeader />
+      <MainNavHeader />
       <NavigationMenu className='border-b'>
         <NavigationMenuList className='w-screen justify-evenly text-4xl'>
-          <NavigationMenuItem>
-            <Link href='/' legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Domů
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Služby</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className='flex flex-col w-[400px] gap-3 p-4 md:w-[500px]  lg:w-[600px] '>
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href='/o-nas' legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                O nás
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href='/cenik' legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Ceník
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href='/galerie' legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Galerie
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <Link href='/kontakt' legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Kontakt
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+          {navData.map((item, index) => {
+            if (!item.subMenu) {
+              return (
+                <NavigationMenuItem key={index}>
+                  <Link href={item.href} legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {item.title}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              );
+            } else {
+              return (
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className='flex flex-col w-[400px] gap-3 p-4 md:w-[500px]  lg:w-[600px] '>
+                      {item.subMenuItems?.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              );
+            }
+          })}
         </NavigationMenuList>
       </NavigationMenu>
     </header>

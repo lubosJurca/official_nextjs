@@ -1,63 +1,26 @@
+import { useState } from 'react';
+import Link from 'next/link';
+
+// shadcnUI
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import Link from 'next/link';
+
+// framer motion
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+
+// data
+import { navData } from '@/lib/data';
 
 interface NavProps {
   handleClick: () => void;
 }
 
-const navData = [
-  {
-    href: '/',
-    title: 'Domů',
-    subMenu: false,
-  },
-  {
-    href: '/',
-    title: 'Služby',
-    subMenu: true,
-    subMenuItems: [
-      {
-        href: '/sluzby/masaze',
-        title: 'Masáže',
-      },
-      {
-        href: '/sluzby/lymfodrenaze',
-        title: 'Lymfodrenáže',
-      },
-      {
-        href: '/sluzby/solarium',
-        title: 'Solárium',
-      },
-      {
-        href: '/sluzby/vacushape',
-        title: 'VacuShape',
-      },
-    ],
-  },
-  {
-    href: '/cenik',
-    title: 'Ceník',
-    subMenu: false,
-  },
-  {
-    href: '/galerie',
-    title: 'Galerie',
-    subMenu: false,
-  },
-  {
-    href: '/kontakt',
-    title: 'Kontakt',
-    subMenu: false,
-  },
-];
 
+// ******************** Nav component*******************
 const Nav = ({ handleClick }: NavProps) => {
   const [isTriggered, setIsTriggered] = useState(false);
 
