@@ -38,7 +38,7 @@ export default function MainNavigation() {
               );
             } else {
               return (
-                <NavigationMenuItem>
+                <NavigationMenuItem key={index}>
                   <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className='flex flex-col w-[400px] gap-3 p-4 md:w-[500px]  lg:w-[600px] '>
