@@ -8,7 +8,7 @@ const variants = {
   enter: { y: 0 },
 };
 
-const montserrat = Kalam({ subsets: ['latin'], weight: '300' });
+const kalam = Kalam({ subsets: ['latin'], weight: '300' });
 
 const MainNavHeader = () => {
   return (
@@ -19,7 +19,7 @@ const MainNavHeader = () => {
         initial='hidden'
         animate='enter'
         transition={{ type: 'linear' }}
-        className={`${montserrat.className} text-center text-4xl py-6  `}
+        className={`${kalam.className} text-center text-4xl py-6  `}
         viewport={{ once: true }}
       >
         Vital Centrum Rajnochovice

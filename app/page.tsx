@@ -1,3 +1,4 @@
+import DuseSection from '@/components/home-page/duse-section/page';
 import MainPageCard from '@/components/home-page/main-page-card/MainPageCard';
 import MainPageCarousel from '@/components/home-page/main-page-carousel/MainPageCarousel';
 import OurHelp from '@/components/home-page/our-help/OurHelp';
@@ -12,11 +13,18 @@ export default function Home() {
         <MainPageCarousel />
       </section>
       <section
-        id='help'
-        className='h-fit flex px-5 py-28 sm:scroll-mt-24   relative'
+        id='telo'
+        className='h-fit flex px-5 py-28 sm:scroll-mt-10   relative'
       >
         <div className='absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]'></div>
         <OurHelp />
+      </section>
+      <section
+        id='duse'
+        className='h-fit flex px-5 py-28 sm:scroll-mt-10   relative'
+      >
+        <div className='absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]'></div>
+        <DuseSection />
       </section>
       
     </main>

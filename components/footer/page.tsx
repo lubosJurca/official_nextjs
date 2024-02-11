@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className='bg-slate-300 text-slate-600 py-10 flex flex-wrap gap-5  sm:justify-around justify-center items-center'>
 
-      <div className="w-80 flex flex-col justify-start items-start border p-6  "  >
+      <div className="w-80 flex flex-col justify-start items-start border border-slate-600 p-6  "  >
         <h3 className='text-lg underline'>Provozní doba</h3>
         <div className='font-light flex gap-4'>
           <h5 className="font-semibold">Pondělí - Pátek</h5>
@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-80 flex flex-col  border p-6 " >
+      <div className="w-80 flex flex-col  border border-slate-600 p-6 " >
         <h3 className='text-lg underline'>
           Kontaktní údaje
         </h3>
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="w-80 flex flex-col  border p-6 " >
+      <div className="w-80 flex flex-col border border-slate-600 p-6 " >
             <h3 className='text-lg underline'>Provozovatel</h3>
             <div className='flex flex-col justify-between  '>
               <h5 className='font-semibold'>Zuzana Javorská</h5>

@@ -24,11 +24,11 @@ const MainPageCard = () => {
         <div className='flex justify-center gap-4'>
           <Button className='bg-slate-200 text-slate-600 hover:text-white p-2'>
             {' '}
-            <Link href='#help'>S čím Vám můžeme pomoci?</Link>
+            <Link href='#telo'>Péče o tělo</Link>
           </Button>
           <Button className='bg-slate-200 text-slate-600 hover:text-white p-2'>
             {' '}
-            <Link href='/kontakt'>Kontaktujte nás!</Link>
+            <Link href='#duse'>Péče o duši</Link>
           </Button>
         </div>
       </CardContent>
