@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { Kalam } from 'next/font/google';
-import HamburgerMenu from '../hamburger-menu/HamburgerMenu';
-import Nav from './nav/Nav';
+import { AnimatePresence, motion } from "framer-motion";
+import { Kalam } from "next/font/google";
+import HamburgerMenu from "../hamburger-menu/HamburgerMenu";
+import Nav from "./nav/Nav";
 
 const variants = {
   open: {
     width: 400,
-    height: 500,
+    height: 600,
     transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] },
   },
   closed: {
@@ -20,7 +20,7 @@ const variants = {
   },
 };
 
-const kalam = Kalam({ subsets: ['latin'], weight: '300' });
+const kalam = Kalam({ subsets: ["latin"], weight: "300" });
 
 const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,12 +30,12 @@ const MobileNavigation = () => {
   };
 
   return (
-    <header className='sm:hidden w-full fixed z-10 bg-slate-50 border'>
-      <div className='flex justify-between p-4'>
+    <header className="sm:hidden w-full fixed z-10 bg-slate-50 border">
+      <div className="flex justify-between p-4">
         <motion.h1
-          initial={{translateY: -500}}
-          animate={{translateY: 0}}
-          transition={{ type: 'linear' }}
+          initial={{ translateY: -500 }}
+          animate={{ translateY: 0 }}
+          transition={{ type: "linear" }}
           className={`${kalam.className} text-slate-600`}
           viewport={{ once: true }}
         >
@@ -51,14 +51,14 @@ const MobileNavigation = () => {
               animate={{ opacity: 0.8 }}
               transition={{ duration: 0.25 }}
               onClick={handleClick}
-              className='absolute h-screen w-screen z-10 bg-black'
+              className="absolute h-screen w-screen z-10 bg-black"
             ></motion.div>
 
             <motion.nav
               variants={variants}
-              initial={'closed'}
-              animate={isOpen ? 'open' : 'closed'}
-              className='absolute flex flex-col justify-evenly items-center right-0 w-full rounded-b bg-slate-100 h-fit z-30 '
+              initial={"closed"}
+              animate={isOpen ? "open" : "closed"}
+              className="absolute flex flex-col justify-evenly items-center right-0 w-full rounded-b bg-slate-100 h-fit z-30 "
             >
               <Nav handleClick={handleClick} />
             </motion.nav>
