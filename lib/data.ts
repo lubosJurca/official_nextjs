@@ -214,7 +214,7 @@ export const vacushapeData = {
 };
 
 // ******************** MASAZE DATA ************
-import masaze0 from "@/public/images/masaze/masaze0.jpg";
+import masaze0 from "@/public/images/masaze/masaze5.jpg";
 import masaze1 from "@/public/images/masaze/masaze1.jpg";
 import masaze2 from "@/public/images/masaze/masaze2.jpg";
 import masaze3 from "@/public/images/masaze/masaze3.jpg";
