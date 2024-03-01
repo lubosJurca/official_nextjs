@@ -6,7 +6,7 @@ import OurHelp from "@/components/home-page/our-help/OurHelp";
 export default function Home() {
   return (
     <main>
-      <section className="flex relative flex-col min-h-screen lg:flex-row justify-center sm:py-40 pb-10 pt-10 items-center gap-16 min-h-  ">
+      <section className="flex relative flex-col min-h-screen lg:flex-row justify-center sm:py-[200px] pb-10 pt-10 items-center gap-16 min-h-  ">
         <div className="absolute top-0 z-[-2] min-h-full w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(180,204,237,.5)_100%)]"></div>
         <MainPageCard />
         <MainPageCarousel />
