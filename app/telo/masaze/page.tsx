@@ -1,5 +1,7 @@
+// component
 import Gallery from "@/components/Gallery";
 
+// shadcn ui
 import {
   Card,
   CardContent,
@@ -7,6 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
+// data
 import { masazeData } from "@/lib/data";
 
 const Masaze = () => {
